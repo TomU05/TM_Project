@@ -6,7 +6,7 @@ For our project we are going to detect sarcasm in youtube comments. Our group co
 ## Title
 
 ## Abstract
-A max 150-word description of the project question or idea, goals, dataset used. What story you would like to tell and why? What's the motivation behind your project?
+In this project, we aim to detect sarcasm in YouTube comments. Sarcasm is often difficult for machines to interpret due to its subtle and context-dependent nature. Instead of using an already existing dataset, we plan to scrape comments directly from YouTube videos using available libraries. After collecting the data, we’ll manually categorize the comments as sarcastic or not to create our own labeled dataset. The motivation behind this project is to explore how well sarcasm (something that’s often tricky even for humans) can be detected by machines, especially in messy, real-world data. 
 
 ## Research questions
 A list of research questions you would like to address during the project. 
