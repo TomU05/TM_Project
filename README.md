@@ -6,7 +6,7 @@ For our project we are going to detect sarcasm in youtube comments. Our group co
 ## Title
 
 ## Abstract
-In this project, we aim to detect sarcasm in YouTube comments. Sarcasm is often difficult for machines to interpret due to its subtle and context-dependent nature. Instead of using an already existing dataset, we plan to scrape comments directly from YouTube videos using available libraries. After collecting the data, we’ll manually categorize the comments as sarcastic or not to create our own labeled dataset. The motivation behind this project is to explore how well sarcasm (something that’s often tricky even for humans) can be detected by machines, especially in messy, real-world data. 
+In this project, we aim to detect sarcasm in YouTube comments. Sarcasm is often difficult for machines to interpret due to its subtle and context-dependent nature. Instead of using an already existing dataset, we plan to scrape comments directly from YouTube videos using available libraries. After collecting the data, we’ll manually categorize the comments as sarcastic or not to create our own labeled dataset. The motivation behind this project is to explore how well sarcasm (something that’s often tricky even for humans) can be detected by machines, especially in messy, real-world data. We chose YouTube comments, because no model was trained on this data before. Modern models still struggle with interpreting sarcasm depending on the context. This is especially valid for YouTube as it is not only text dependent but also relies on the content of the video published.
 
 ## Research questions
 A list of research questions you would like to address during the project. 
