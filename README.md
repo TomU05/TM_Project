@@ -12,7 +12,7 @@ In this project, we aim to detect sarcasm in YouTube comments. Sarcasm is often 
 A list of research questions you would like to address during the project. 
 
 ## Dataset
-List the dataset(s) you want to use, and some ideas on how do you expect to get, manage, process and enrich it/them. Show you've read the docs and are familiar with some examples, and you've a clear idea on what to expect. Discuss data size and format if relevant.
+We will use the TMZ YouTube channel and choose 4 different YouTube videos.
 
 ## A tentative list of milestones for the project
 Add here a sketch of your planning for the coming weeks. Please mention who does what.
