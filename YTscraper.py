@@ -43,10 +43,10 @@ def get_youtube_comments(video_id, api_key, max_results=100):
 # For adding to a CSV file
 with open('youtube_comments.csv', 'w', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(['video_id', 'comment_number', 'comment', 'sarcastic'])
+    writer.writerow(['video_id', 'comment_number', 'sarcastic', 'comment'])
 
     for i in range(len(VIDEO_ID)):
         comments = get_youtube_comments(VIDEO_ID[i], API_KEY, max_results=300)
-        for idx, comment in enumerate(comments, 1):  # Start index at 1
-            writer.writerow([VIDEO_ID[i], idx, comment, False])
+        for idx, comment in enumerate(comments, 1):
+            writer.writerow([VIDEO_ID[i], idx, False, comment])
 
