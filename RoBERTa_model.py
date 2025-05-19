@@ -13,6 +13,8 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_sc
 from sklearn.model_selection import train_test_split
 from torch.nn import CrossEntropyLoss
 import torch.nn.functional as F
+from sklearn.metrics import confusion_matrix
+from transformers import EarlyStoppingCallback
 
 # Load your CSV
 df = pd.read_csv("youtube_comments.csv", quotechar='"')
@@ -104,10 +106,9 @@ def compute_metrics(pred):
 # Improved training arguments
 training_args = TrainingArguments(
     output_dir="./sarcasm_model",
-    evaluation_strategy="steps",
-    eval_steps=100,
-    save_strategy="steps",
-    learning_rate=3e-5,
+    evaluation_strategy="epoch",
+    save_strategy="epoch",
+    learning_rate=2e-5,
     per_device_train_batch_size=16,
     per_device_eval_batch_size=64,
     gradient_accumulation_steps=2,
@@ -128,6 +129,7 @@ trainer = WeightedTrainer(
     eval_dataset=test_ds,
     compute_metrics=compute_metrics,
     loss_fn=loss_fn,
+    callbacks=[EarlyStoppingCallback(early_stopping_patience=2)],
 )
 
 # Train
@@ -144,3 +146,7 @@ y_true = preds.label_ids
 y_pred = np.argmax(preds.predictions, axis=1)
 print("\nClassification Report:")
 print(classification_report(y_true, y_pred, target_names=["Not Sarcastic", "Sarcastic"]))
+
+cm = confusion_matrix(y_true, y_pred)
+print("\nConfusion Matrix:")
+print(cm)
